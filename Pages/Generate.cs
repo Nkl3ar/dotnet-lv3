@@ -15,11 +15,16 @@ public class GenerateModel : PageModel
 
     public void OnGet()
     {
-        for(int i = 0; i<10; i++)
+
+    }
+    public void OnPost(int passlen, int passwordcount, bool symbols = false, bool upper = false, bool lower = false, bool digits = false)
+    {
+        if(symbols || upper || lower || digits){
+        for(int i = 0; i<passwordcount; i++)
         {
-            Passwords.Add(GeneratePasswords.CreatePassword(10));
+            Passwords.Add(GeneratePasswords.CreatePassword(passlen,symbols,upper,lower,digits));
         }
-        
+        }
     }
 }
 

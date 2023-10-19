@@ -5,5 +5,67 @@
 }
 <h1>@ViewData["Title"]</h1>
 
+
+<form method="post" >
+        <fieldset>
+          <legend>Password</legend>
+          <div>
+            <label for="passwordcount"> Broj lozinki</label>
+            <select name="passwordcount" id="passwordcount">
+                @for(var i = 1; i < 21; i++)
+                        {
+                            if(i == 10)
+                            {
+                                <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        }
+                
+            </select>
+          </div>
+          <div>
+            <label for="passlen"> Duljina</label>
+            <select name="passlen" id="passlen">
+                @for(var i = 1; i < 21; i++)
+                        {
+                            if(i == 10)
+                            {
+                                <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        }
+                
+            </select>
+          </div>
+          <div>
+            <input type="checkbox" name="digits" value="true" checked />
+            <label for="digits"> Znamenke</label>
+          </div>
+          <div>
+            <input type="checkbox" name="lower" value="true" checked/>
+            <label for="lower"> Mala Slova</label>
+          </div>
+          <div>
+            <input type="checkbox" name="upper" value="true" checked/>
+            <label for="upper"> Velika Slova</label>
+          </div>
+          <div>
+            <input type="checkbox" name="symbols" value="true"/>
+            <label for="symbols"> Simboli</label>
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Provjeri" class="submit" />
+          </div>
+        </fieldset>
+      </form>
+
+<a>Passwords:</a>
 <p>@foreach(var i in @Model.Passwords){ @i; <br> }</p>
 

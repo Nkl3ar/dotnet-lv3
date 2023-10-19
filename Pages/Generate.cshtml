@@ -5,4 +5,5 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>@foreach(var i in @Model.Passwords){ @i;<a> </a>}</p>
+

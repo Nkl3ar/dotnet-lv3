@@ -6,17 +6,22 @@ namespace PasswordGen.Pages;
 
 public class CheckModel : PageModel
 {
-    public string PasswordQuality {get; set;}
+    public string passwordQuality {get; set;}
     private readonly ILogger<CheckModel> _logger;
 
     public CheckModel(ILogger<CheckModel> logger)
     {
         _logger = logger;
+        passwordQuality = "";
     }
 
     public void OnGet()
     {
-        PasswordQuality = "";
     }
+    public void OnPost(string password)
+    {
+        passwordQuality = PasswordCheck.PasswordCheckFunc(password);
+    }
+    
 }
 

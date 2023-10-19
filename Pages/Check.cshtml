@@ -1,0 +1,23 @@
+﻿@page
+@model CheckModel
+@{
+    ViewData["Title"] = "Check";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<form method="get" >
+        <fieldset>
+          <legend>Password</legend>
+          <div>
+            <label for="password">Unesite lozinku:</label>
+            <input type="password" name="password" value="" />
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Provjeri" class="submit" />
+          </div>
+        </fieldset>
+      </form>
+
+<a>@Model.PasswordQuality</a>

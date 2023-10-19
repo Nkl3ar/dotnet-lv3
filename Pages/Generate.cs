@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PasswordGen.Pages;
-using PasswordGen.Models;
 public class GenerateModel : PageModel
 {
     private readonly ILogger<GenerateModel> _logger;
@@ -16,8 +15,10 @@ public class GenerateModel : PageModel
 
     public void OnGet()
     {
-        string pass = "test";
-        Passwords.Add("te4st");
+        for(int i = 0; i<10; i++)
+        {
+            Passwords.Add(GeneratePasswords.CreatePassword(10));
+        }
         
     }
 }
